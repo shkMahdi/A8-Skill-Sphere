@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "20 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Learn full-stack web development from scratch with modern tools.",
+    "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "UI/UX Design Masterclass",
+    "instructor": "Sarah Miles",
+    "duration": "14 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Design user-friendly products using wireframes, systems, and prototyping.",
+    "image": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+    "category": "Design"
+  },
+  {
+    "id": 3,
+    "title": "Digital Marketing Strategy",
+    "instructor": "Ariana Fox",
+    "duration": "16 hours",
+    "rating": 4.9,
+    "level": "Beginner",
+    "description": "Build high-performing marketing funnels for social and search channels.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+    "category": "Marketing"
+  },
+  {
+    "id": 4,
+    "title": "Data Analytics with Python",
+    "instructor": "Michael Tan",
+    "duration": "18 hours",
+    "rating": 4.6,
+    "level": "Intermediate",
+    "description": "Analyze datasets and visualize insights with pandas and matplotlib.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+    "category": "Data"
+  },
+  {
+    "id": 5,
+    "title": "Mobile App Development with React Native",
+    "instructor": "Nina Roy",
+    "duration": "22 hours",
+    "rating": 4.85,
+    "level": "Advanced",
+    "description": "Create cross-platform mobile apps with navigation, APIs, and deployment.",
+    "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3",
+    "category": "Development"
+  },
+  {
+    "id": 6,
+    "title": "Brand Identity & Visual Storytelling",
+    "instructor": "David Kim",
+    "duration": "12 hours",
+    "rating": 4.5,
+    "level": "Beginner",
+    "description": "Craft brand systems and visual stories that communicate business value.",
+    "image": "https://images.unsplash.com/photo-1503602642458-232111445657",
+    "category": "Design"
+  }
+]
