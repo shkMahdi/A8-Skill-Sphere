@@ -1,11 +1,8 @@
 import CourseCard from "@/components/CourseCard";
 import HeroSlider from "@/components/HeroSlider";
+import { getData } from "@/lib/api";
 import Link from "next/link";
 
-const getData = async () => {
-  const res = (await fetch('https://skill-sphere-mu.vercel.app/data.json'));
-  return res.json();
-}
 
 const getPopularCourses = (courses) =>{
   return [...courses].sort((a, b) => a.rating - b.rating).slice(0, 3);

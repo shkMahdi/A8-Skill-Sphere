@@ -4,7 +4,7 @@ import React from 'react';
 const Navbar = () => {
     const links = <>
         <li><Link href="/">Home</Link></li>
-        <li><Link href="/item1">Courses</Link></li>
+        <li><Link href="/courses">Courses</Link></li>
         <li><Link href="/item2">My Profile</Link></li>
     </>
     return (
