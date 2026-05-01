@@ -9,7 +9,7 @@ const HeroSlider = () => {
 
     const slides = [
         {
-            title: "Upgrade Your Skills Today 🚀",
+            title: "Upgrade Your Skills Today 🚀...",
             subtitle: "Build practical expertise with guided lessons and projects.",
         },
         {
