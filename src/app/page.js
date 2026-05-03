@@ -11,7 +11,8 @@ const getPopularCourses = (courses) => {
 export default async function Home() {
   const allCourses = await getData();
   const popularCourses = getPopularCourses(allCourses);
-
+  const trendingCourses = allCourses.slice(3, 6);
+  
   return (
     <div className="bg-slate-950/90 space-y-20 py-15">
       <div className="mx-auto w-full max-w-6xl space-y-14 px-4 py-8 md:px-6 md:py-10">
@@ -53,6 +54,15 @@ export default async function Home() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="mb-5 text-2xl font-bold">Trending Courses</h2>
+          <div className="grid gap-5 md:grid-cols-3">
+            {trendingCourses.map((course) => (
+              <CourseCard key={course.id} course={course} />
+            ))}
           </div>
         </section>
       </div>
