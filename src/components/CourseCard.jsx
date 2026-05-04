@@ -1,10 +1,26 @@
+"use client";
+import { animated, useSpring } from '@react-spring/web';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 const CourseCard = ({course}) => {
+    const [springs, api] = useSpring(() => ({
+        scale: 1,
+        shadow: 20,
+        config: { tension: 300, friction: 20 },
+    }));
+
     return (
-        <div className="card h-full border border-white/10 bg-slate-900 shadow-xl">
+        <animated.div
+            className="card h-full border border-white/10 bg-slate-900 shadow-xl"
+            style={{
+                scale: springs.scale,
+                boxShadow: springs.shadow.to(s => `0 ${s}px ${s * 2}px rgba(0,0,0,0.4)`),
+            }}
+            onMouseEnter={() => api.start({ scale: 1.04, shadow: 40 })}
+            onMouseLeave={() => api.start({ scale: 1, shadow: 20 })}
+        >
             <figure className="relative h-48 w-full">
                 <Image
                     src={`${course.image}?auto=format&fit=crop&w=900&q=80`}
@@ -23,7 +39,7 @@ const CourseCard = ({course}) => {
                     </Link>
                 </div>
             </div>
-        </div>
+        </animated.div>
     );
 };
 
