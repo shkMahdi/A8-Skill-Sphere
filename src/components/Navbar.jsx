@@ -2,21 +2,31 @@
 import { authClient } from '@/lib/auth-client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 import Spinner from './Spinner';
 
 const Navbar = () => {
-
+    const pathname = usePathname();
     const { data: session, isPending } = authClient.useSession()
-    // console.log(session);
-
     const user = session?.user;
 
-    const links = <>
-        <li><Link href="/">Home</Link></li>
-        <li><Link href="/courses">Courses</Link></li>
-        <li><Link href="/my-profile">My Profile</Link></li>
-    </>
+    const navLinks = [
+        { href: '/', label: 'Home' },
+        { href: '/courses', label: 'Courses' },
+        { href: '/my-profile', label: 'My Profile' },
+    ];
+
+    const links = navLinks.map(({ href, label }) => (
+        <li key={href}>
+            <Link
+                href={href}
+                className={pathname === href ? 'text-cyan-400 font-semibold' : ''}
+            >
+                {label}
+            </Link>
+        </li>
+    ));
     return (
         <div className='bg-slate-950/90 backdrop-blur-md'>
             <div className="max-w-6xl mx-auto navbar bg-slate-950/90 backdrop-blur-md shadow-sm">
