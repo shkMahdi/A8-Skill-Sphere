@@ -1,11 +1,21 @@
+"use client";
+import { authClient } from '@/lib/auth-client';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import Spinner from './Spinner';
 
 const Navbar = () => {
+
+    const { data: session, isPending } = authClient.useSession()
+    // console.log(session);
+
+    const user = session?.user;
+
     const links = <>
         <li><Link href="/">Home</Link></li>
         <li><Link href="/courses">Courses</Link></li>
-        <li><Link href="/item2">My Profile</Link></li>
+        <li><Link href="/my-profile">My Profile</Link></li>
     </>
     return (
         <div className='bg-slate-950/90 backdrop-blur-md'>
@@ -28,13 +38,33 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end gap-2">
-                    <Link href="/login" className="btn btn-sm btn-outline btn-info">
-                        Login
-                    </Link>
-                    <Link href="/register" className="btn btn-sm btn-info">
-                        Register
-                    </Link>
+                <div className="flex items-center gap-3 navbar-end">
+                    {isPending ? (
+                        <Spinner></Spinner>
+                    ) : user ? (
+                        <>
+                            <p className="text-sm text-slate-300 font-semibold">Hi, {user.name}</p>
+                            <Image
+                                src={user.image || '/userIcon.png'}
+                                alt={user.name || "User"}
+                                width={36}
+                                height={36}
+                                className="h-9 w-9 rounded-full border border-cyan-500/60 object-cover"
+                            />
+                            <button className="btn btn-sm btn-info" onClick={async () => await authClient.signOut()}>
+                                Logout
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <Link href="/login" className="btn btn-sm btn-outline btn-info">
+                                Login
+                            </Link>
+                            <Link href="/register" className="btn btn-sm btn-info">
+                                Register
+                            </Link>
+                        </>
+                    )}
                 </div>
             </div>
         </div>
