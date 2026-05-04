@@ -12,6 +12,7 @@
     "next": "16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "react-hook-form": "^7.75.0",
     "react-hot-toast": "^2.6.0",
     "react-spinner": "^0.2.7",
     "react-spinners": "^0.17.0",
