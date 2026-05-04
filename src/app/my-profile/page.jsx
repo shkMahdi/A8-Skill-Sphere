@@ -13,7 +13,7 @@ const MyProfile = () => {
 
     if (isPending) {
         return (
-            <div className="flex min-h-screen items-center justify-center bg-slate-950">
+            <div className="flex flex-1 items-center justify-center bg-slate-950">
                 <Spinner></Spinner>
             </div>
         );
@@ -21,7 +21,7 @@ const MyProfile = () => {
 
     if (!user) {
         return (
-            <div className="flex min-h-screen items-center justify-center bg-slate-950">
+            <div className="flex flex-1 items-center justify-center bg-slate-950">
                 <p className="text-slate-400">You are not logged in.</p>
             </div>
         );
